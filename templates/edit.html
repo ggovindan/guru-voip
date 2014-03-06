@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{%block title %} {{page_name}} editing {% endblock %}
+{%block content %} <h1>{{page_name}}</h1> Editing
+<form method=post action="/mywiki/{{page_name}}/save">
+{% csrf_token %}
+<textarea name="content" rows=20 cols=60>{{content}}
+</textarea>
+<br/>
+<input type="submit" value="post"/>
+</form>
+{% endblock %}
